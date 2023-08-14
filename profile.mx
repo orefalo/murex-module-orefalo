@@ -1,35 +1,29 @@
-if status --is-interactive
+#if status --is-interactive
     # not used anymore 'fisher grc' takes care of it
     #set grc_wrap_commands "cat cvs df diff dig gcc g++ ifconfig make mount mtr netstat ping ps tail traceroute wdiff"
 
     # colors
+    export MAVEN_COLOR=true
+    export LESS="--RAW-CONTROL-CHARS"
+    export GREP_OPTIONS='--color=auto'
+    export GREP_COLOR='1;33'
+    export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config.snapcore"
+    export SAM_CLI_TELEMETRY=0
+    export HOMEBREW_NO_ANALYTICS=1
 
-    theme_tokyonight night
-
-    #set -x LSCOLORS 'GxfxhxhxcxegedaCaCgxgx'
-    #set -x CLICOLOR 1
-    set -x MAVEN_COLOR true
-    set -x LESS "--RAW-CONTROL-CHARS"
-    set -x GREP_OPTIONS '--color=auto'
-    set -x GREP_COLOR '1;33'
-    fish_add_path --path $HOME/.krew/bin
-    set -x KUBECONFIG "$HOME/.kube/config:$HOME/.kube/config.snapcore"
-    set -x SAM_CLI_TELEMETRY 0
-    set -x HOMEBREW_NO_ANALYTICS 1
+    # add krew to path
+    $PATH -> :paths: prepend $HOME/.krew/bin -> export PATH
 
     # my key aliases
     alias ..='cd ..'
     alias ...='cd ../..'
-    alias j=z
     alias ls="lsd --group-dirs first"
     alias ll="lsd --group-dirs first -la"
     alias l='ls -l'
-    alias lt='ls --tree --depth=3'
+    alias lt='lsd --tree --group-dirs first --depth=3'
     alias sl=ls
     alias dig=dog
-    # broot bellow is a better tree alternative
-    #alias tree="lsd --tree --group-dirs first --depth=4"
-    alias tree="broot"
+    alias tree=broot
     alias find=fd
     alias ping=prettyping
     # I don't like procs for this use case
@@ -44,15 +38,13 @@ if status --is-interactive
     alias diff=difftastic
     alias httpie=xh
     alias publicip='curl ifconfig.me'
-    #alias cp='rsync --progress -avz --ignore-existing'
     alias update='brew update;brew upgrade;brew autoremove;brew cleanup; pnpm update -g'
     alias cleanup="command find . -type f -name '*.DS_Store' -ls -delete"
 
-    alias unalias="functions -e "
-
+    # Helm stuff
     alias h=helm
     alias hl="helm ls -A"
-    alias k="kubectl"
+    alias k=kubectl
     alias kd="kubectl describe"
     alias kdp="kubectl describe pod"
     alias kds="kubectl describe service"
@@ -73,13 +65,13 @@ if status --is-interactive
     alias kgia="kubectl get ingress -A -o wide"
     alias kpf="kubectl port-forward"
     alias kopen="kubectl open-svc"
-    alias ktop="k9s"
+    alias ktop=k9s
     alias kfree="kubectl view-utilization -h"
     alias kcapacity="kube-capacity"
-    alias kctx="kubectx"
+    alias kctx=kubectx
     alias krew="kubectl krew"
-    alias kns="kubens"
-    alias klog="stern"
+    alias kns=kubens
+    alias klog=stern
     alias kls="kubectl get-all"
     alias kwhoami="kubectl whoami"
     alias klistimages="kubectl images"
@@ -91,13 +83,12 @@ if status --is-interactive
     alias krbac="kubectl access-matrix"
 
     # specific osx aliases
-    if test (uname) = "Darwin"
-        set -x EDITOR "subl -w"
+    if { os darwin } then {
+        export EDITOR="subl -w"
         alias top=zenith
         alias diff=difftastic
-        alias preview="open -a '$PREVIEW'"
         alias mou="open -a Typora"
-    end
+    }
 
     # docker stuff
     alias d=docker
@@ -111,41 +102,17 @@ if status --is-interactive
     alias dclean="docker rmi -f (docker images -f "dangling=true" -q)"
 
     # postgres stuff
-    # alias pgstart="brew services start postgresql"
-    # alias pgstop="brew services stop postgresql"
-    # alias pgtop=pg_top
-
-    #alias start_minikube="minikube start --driver qemu --memory=4G --cpus=4 --disk-size=50g && eval (command minikube docker-env) && minikube addons enable ingress"
-    #alias stop_minikube="minikube stop && eval (minikube docker-env -u)"
-    #alias docker-env="eval (command minikube docker-env)"
-
-    alias start_minikube="colima start -cpu 4 -m 6 -k"
-    alias stop_minikube="colima stop"
-
-    # fixes my typos
-    alias gti=git
+    alias pgstart="brew services start postgresql"
+    alias pgstop="brew services stop postgresql"
+    alias pgtop=pg_top
 
     alias tfp="terraform plan | scenery"
     alias tf=terraform
 
+    # fixes my typos
+    alias gti=git
+
     alias npm=pnpm
     alias wrk2=oha
 
-    # thats the best cli prompt
-    if test -x (which starship)
-        starship init fish | source
-    end
-
-    if test (command -v jump >/dev/null) -a (status --is-interactive)
-      jump shell fish | source
-    end
-
-    # if command -v zoxide >/dev/null
-    #   status --is-interactive; and source (zoxide init fish | psub)
-    # end
-
-    # Activate version from nearest .nvmrc file
-    if test (type -t nvm) = "function"
-      nvm use 
-    end
-end
+#end
