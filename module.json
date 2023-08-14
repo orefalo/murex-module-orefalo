@@ -64,5 +64,16 @@
       "Required": [],
       "Platform": ["posix"]
     }
+  },
+  {
+    "Name": "local-docker",
+    "Summary": "configures local docker",
+    "Version": "1.0",
+    "Source": "configureDocker.mx",
+    "Dependencies": {
+      "Optional": [],
+      "Required": [],
+      "Platform": ["posix"]
+    }
   }
 ]

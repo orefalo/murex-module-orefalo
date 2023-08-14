@@ -1,0 +1,21 @@
+
+# configure colima
+mkdir -p ~/.docker/cli-plugins
+ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+
+# osxkeychain and repo setup
+cp ./configs/dockerconfig.json ~/.docker/config.json
+
+alias start_minikube="colima start -c 4 -m 6 -k"
+alias stop_minikube="colima stop"
+
+ # docker stuff
+alias d=docker
+alias dc=docker-compose
+alias dps="docker ps | docker-color-output"
+alias dcps="docker-compose ps -a | docker-color-output"
+alias dpi="docker images | docker-color-output"
+alias dpiarch="docker image inspect --format '{{.ID}} {{.RepoTags}} {{.Architecture}}' (docker image ls -q)"
+alias dshell="docker run -it --rm --entrypoint /bin/sh"
+alias dtop=lazydocker
+alias dclean="docker rmi -f (docker images -f "dangling=true" -q)"
