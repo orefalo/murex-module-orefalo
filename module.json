@@ -1,0 +1,57 @@
+[
+  {
+    "Name": "profile",
+    "Summary": "My personal configs and profile",
+    "Version": "1.0",
+    "Source": "profile.mx",
+    "Dependencies": {
+      "Optional": [],
+      "Required": [],
+      "Platform": ["posix"]
+    }
+  },
+  {
+    "Name": "tilde",
+    "Summary": "Fixes ~ key on non standard macbook keybaords",
+    "Version": "1.0",
+    "Source": "fixKeyboardTilde.mx",
+    "Dependencies": {
+      "Optional": [],
+      "Required": [],
+      "Platform": ["posix"]
+    }
+  },
+  {
+    "Name": "sublime-link",
+    "Summary": "Creates /usr/local/bin/subl link",
+    "Version": "1.0",
+    "Source": "configureSublimeCliLink.mx",
+    "Dependencies": {
+      "Optional": [],
+      "Required": [],
+      "Platform": ["posix"]
+    }
+  },
+  {
+    "Name": "k9s",
+    "Summary": "Configured k9s hotkeys",
+    "Version": "1.0",
+    "Source": "configureK9s.mx",
+    "Dependencies": {
+      "Optional": [],
+      "Required": [],
+      "Platform": ["posix"]
+    }
+  },
+  {
+    "Name": "k9s",
+    "Summary": "Reonfigures HOME/END keys",
+    "Version": "1.0",
+    "Source": "configureHomeEndKeys.mx",
+    "Dependencies": {
+      "Optional": [],
+      "Required": [],
+      "Platform": ["posix"]
+    }
+  }
+]

@@ -1,0 +1,190 @@
+## DB CLI =====
+
+# a universal db cli
+xo/xo/usql
+# a redis cli
+iredis
+# a better psql
+pgcli
+# a better cli for mysql & mariadb
+mycli
+
+## LOAD TESTING =====
+
+# a good load tester
+ddosify/tap/ddosify
+# oha is a great wrk2 alternative
+oha
+
+# those are old alternatives
+# hey
+# vegeta
+# wrk
+# wrk2 
+
+## PROCESS MGMT =====
+
+# modern ps replacement
+procs
+# a better top
+zenith
+# outdated
+#htop
+
+## K8s =====
+
+derailed/k9s/k9s
+robscott/tap/kube-capacity
+kubernetes-cli
+helm
+kubectx
+stern
+helmsman
+derailed/popeye/popeye
+# chart & k8s yaml linter
+kube-linter
+
+## DOCKER =====
+
+# colima is better
+#minikube
+#qemu
+
+# run this command to complete setup mkdir -p ~/.docker/cli-plugins && ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+colima
+docker
+docker-compose
+docker-credential-helper
+
+# color output for docker
+dldash/core/docker-color-output
+# Dockerfile linter
+hodalint
+docker-ls
+docker-clean
+dive
+
+## GOLANG =====
+
+tinygo-org/tools/tinygo
+golang
+
+## JAVA =====
+
+maven
+ant
+
+### JSON & YAML =====
+
+# a json viewer for the cli
+fx
+jq
+yq
+
+## GIT =====
+
+git
+# https://github.com/MitMaro/git-interactive-rebase-tool
+interactive-rebase-tool
+git-delta
+# a better diff
+difftastic
+# replaced with difftastic
+# icdiff
+
+## SSL =====
+
+mkcert
+openssl
+
+## FETCHER =====
+
+# replaced with xh + alias
+# httpie
+xh
+# a better wget, suppors http/s,s/ftp, torrent
+aria2
+# to replace with aria2
+# wget 
+
+## CLI & SUBSTITUTIONS =====
+
+vim
+fish
+# a better dig
+dog
+choose
+# a better find
+fd
+sd
+# that's a better du -f
+dust
+# a better du
+duf
+# better ping
+prettyping
+# better grep
+ripgrep
+# better cat
+bat
+# a better ls
+lsd
+# a better tree
+broot
+
+## CLI ENHANCEMENTS =====
+
+# great color prompt
+starship
+# cli benchmark tool
+hyperfine
+# hex viewer
+hexyl
+# like z just better
+jump
+# markdown for cli
+glow
+# Modern Day Portscanner
+rustscan
+# 4 kns kctx interactive mode
+# fzf -> replaced with fzy
+# a good fuzzy searcher
+fzy
+# za compression format
+xz
+# cli file sharing
+croc
+# terminal recorder
+asciinema
+# file dupes finder
+jdupes
+# colorizer
+grc
+
+## OTHERS =====
+
+# edge queue on steroids
+nats-server
+# nats jetstream cli tool (ie. nats bench)
+nats-io/nats-tools/nats
+# a tiny dns client
+natesales/repo/q
+# cli to access planetscale
+planetscale/tap/pscale
+# AwS
+#awslogs
+#awscli
+#aws-shell
+
+ffmpeg
+rargs
+telnet
+graphviz
+terraform
+aerial
+plantuml
+transmission
+syntax-highlight
+imageoptim
+iina
+suspicious-package

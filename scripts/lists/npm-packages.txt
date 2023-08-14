@@ -1,0 +1,39 @@
+#yarn
+#npm-check
+# generates images of your code
+carbon-now-cli
+typescript
+typesync
+#eslint
+#prettier
+#nanoid
+svgo
+#lerna
+http-server
+js-to-ts-converter
+#husky
+tsup
+graphql-schema-linter
+graphql-schema-diff
+get-graphql-schema
+cz-customizable
+
+#spoof
+#@microsoft/rush
+#graphql-cli 
+#graphql-cli-get-raw-schema 
+#graphql-cli-voyager graphql-docs
+
+# deprecated 
+#@dbml/cli
+#aws-cdk
+#tslint
+#webpack
+#fuge
+#pegjs
+#get-graphql-schema
+#replaced by rg
+#spot
+#http bench
+#ndb
+#graphqurl
