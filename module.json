@@ -44,7 +44,7 @@
     }
   },
   {
-    "Name": "k9s",
+    "Name": "home-end-keys",
     "Summary": "Reonfigures HOME/END keys",
     "Version": "1.0",
     "Source": "configureHomeEndKeys.mx",
