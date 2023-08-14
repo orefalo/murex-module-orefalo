@@ -1,7 +1,7 @@
 
 !if { out ~/.k9s/hotkey.yml -> f +F } then {
+
     mkdir -p ~/.k9s/
     cp configs/k9s_hotkey.yml ~/.k9s/hotkey.yml
+
 }
-
-
