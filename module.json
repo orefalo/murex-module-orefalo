@@ -53,5 +53,16 @@
       "Required": [],
       "Platform": ["posix"]
     }
+  },
+  {
+    "Name": "starship-config",
+    "Summary": "configures starship to my defaults",
+    "Version": "1.0",
+    "Source": "configureStarship.mx",
+    "Dependencies": {
+      "Optional": [],
+      "Required": [],
+      "Platform": ["posix"]
+    }
   }
 ]

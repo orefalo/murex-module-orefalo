@@ -1,0 +1,6 @@
+
+!if { out ~/.config/starship.toml -> f +F } then {
+
+    cp configs/starship.toml ~/.config/
+
+}
