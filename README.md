@@ -1,22 +1,15 @@
-# masterconfig
+# murex-module-orefalo
 
-This fish extension brings balance to the force.
-It installs all my other fish dependencies, sets my key aliases and settings
-
-One command to run, to set it all
+This module installs all my preferences
 
 ## Install
 
-With [fisherman]
-
-```
-fisher install orefalo/masterconfig
+```shell
+murex-package install https://github.com/orefalo/murex-module-orefalo.git
 ```
 
-then you migh want to cherry pick the .sh to your likings
+## Update
 
-## Usage
-
-```fish
-masterconfig
+```shell
+murex-package update
 ```

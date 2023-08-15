@@ -1,8 +1,5 @@
  if { $SELF.Interactive } then {
     
-    # not used anymore 'fisher grc' takes care of it
-    #set grc_wrap_commands "cat cvs df diff dig gcc g++ ifconfig make mount mtr netstat ping ps tail traceroute wdiff"
-
     # colors
     export MAVEN_COLOR=true
     export LESS="--RAW-CONTROL-CHARS"
