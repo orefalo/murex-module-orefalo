@@ -1,4 +1,5 @@
- if { $SELF.Interactive } then {
+ # not needed - modules are interactive by default
+ #if { $SELF.Interactive } then {
     
     # colors
     export MAVEN_COLOR=true
@@ -99,4 +100,4 @@
     alias npm=pnpm
     alias wrk2=oha
 
-}
+#}
