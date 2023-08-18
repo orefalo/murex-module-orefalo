@@ -1,103 +1,98 @@
- # not needed - modules are interactive by default
- #if { $SELF.Interactive } then {
-    
-    # colors
-    export MAVEN_COLOR=true
-    export LESS="--RAW-CONTROL-CHARS"
-    export GREP_OPTIONS='--color=auto'
-    export GREP_COLOR='1;33'
-    export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config.snapcore"
-    export SAM_CLI_TELEMETRY=0
-    export HOMEBREW_NO_ANALYTICS=1
 
-    # add krew to path
-    $PATH -> :paths: prepend $HOME/.krew/bin -> export PATH
+# colors
+export MAVEN_COLOR=true
+export LESS="--RAW-CONTROL-CHARS"
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;33'
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config.snapcore"
+export SAM_CLI_TELEMETRY=0
+export HOMEBREW_NO_ANALYTICS=1
 
-    # my key aliases
-    alias ..=cd ..
-    alias ...=cd ../..
-    alias ls=lsd --group-dirs first
-    alias ll=lsd --group-dirs first -la
-    alias l=ls -l
-    alias lt=lsd --tree --group-dirs first --depth=3
-    alias sl=ls
-    alias dig=dog
-    alias tree=broot
-    alias find=fd
-    alias ping=prettyping
-    alias du=duf
-    alias duf=dust
-    alias cat=bat --style=header,grid
-    alias more=cat
-    alias mroe=cat
-    alias spot=rg
+# add krew to path
+$PATH -> :paths: prepend $HOME/.krew/bin -> export PATH
+
+# my key aliases
+alias tfp=terraform plan -> scenery
+alias tf=terraform
+# fixes my typos
+alias gti=git
+alias sl=ls
+
+alias npm=pnpm
+alias wrk2=oha
+alias ..=cd ..
+alias ...=cd ../..
+alias ls=lsd --group-dirs first
+alias ll=lsd --group-dirs first -la
+alias l=ls -l
+alias lt=lsd --tree --group-dirs first --depth=3
+
+alias dig=dog
+alias tree=broot
+alias find=fd
+alias ping=prettyping
+alias du=duf
+alias duf=dust
+alias cat=bat --style=header,grid
+alias more=cat
+alias mroe=cat
+alias spot=rg
+alias diff=difftastic
+alias httpie=xh
+alias publicip=curl ifconfig.me
+alias update=brew update;brew upgrade;brew autoremove;brew cleanup; pnpm update -g
+alias cleanup=command find . -type f -name '*.DS_Store' -ls -delete
+
+# Helm stuff
+alias h=helm
+alias hl=helm ls -A
+alias k=kubectl
+alias kd=kubectl describe
+alias kdp=kubectl describe pod
+alias kds=kubectl describe service
+alias kg=kubectl get
+alias kgp=kubectl get pods -o wide
+alias kgs=kubectl get services -o wide
+alias kgn=kubectl get nodes -o wide
+alias kgd=kubectl get deployments -o wide
+alias kge=kubectl get event
+# kga --since 5m
+alias kga=kubectl get-all
+alias kgi=kubectl get ingress -o wide  
+alias kgna=kubectl get nodes -A -o wide
+alias kgda=kubectl get deployments -A -o wide
+alias kgpa=kubectl get pods -A -o wide
+alias kgsa=kubectl get services -A -o wide
+alias kgea=kubectl get event -A -o wide
+alias kgia=kubectl get ingress -A -o wide
+alias kpf=kubectl port-forward
+alias kopen=kubectl open-svc
+alias ktop=k9s
+alias kfree=kubectl view-utilization -h
+alias kcapacity=kube-capacity
+alias kctx=kubectx
+alias krew=kubectl krew
+alias kns=kubens
+alias klog=stern
+alias kls=kubectl get-all
+alias kwhoami=kubectl whoami
+alias klistimages=kubectl images
+alias klistapis=kubectl api-resources -o wide
+alias kupdate=k outdated
+
+# kshell podname /bin/sh
+alias kshell=kubectl iexec
+alias krbac=kubectl access-matrix
+
+# specific osx aliases
+if { os darwin } then {
+    export EDITOR="subl -w"
+    alias top=zenith
     alias diff=difftastic
-    alias httpie=xh
-    alias publicip=curl ifconfig.me
-    alias update=brew update;brew upgrade;brew autoremove;brew cleanup; pnpm update -g
-    alias cleanup=command find . -type f -name '*.DS_Store' -ls -delete
+    alias mou=open -a Typora
+}
 
-    # Helm stuff
-    alias h=helm
-    alias hl=helm ls -A
-    alias k=kubectl
-    alias kd=kubectl describe
-    alias kdp=kubectl describe pod
-    alias kds=kubectl describe service
-    alias kg=kubectl get
-    alias kgp=kubectl get pods -o wide
-    alias kgs=kubectl get services -o wide
-    alias kgn=kubectl get nodes -o wide
-    alias kgd=kubectl get deployments -o wide
-    alias kge=kubectl get event
-    # kga --since 5m
-    alias kga=kubectl get-all
-    alias kgi=kubectl get ingress -o wide  
-    alias kgna=kubectl get nodes -A -o wide
-    alias kgda=kubectl get deployments -A -o wide
-    alias kgpa=kubectl get pods -A -o wide
-    alias kgsa=kubectl get services -A -o wide
-    alias kgea=kubectl get event -A -o wide
-    alias kgia=kubectl get ingress -A -o wide
-    alias kpf=kubectl port-forward
-    alias kopen=kubectl open-svc
-    alias ktop=k9s
-    alias kfree=kubectl view-utilization -h
-    alias kcapacity=kube-capacity
-    alias kctx=kubectx
-    alias krew=kubectl krew
-    alias kns=kubens
-    alias klog=stern
-    alias kls=kubectl get-all
-    alias kwhoami=kubectl whoami
-    alias klistimages=kubectl images
-    alias klistapis=kubectl api-resources -o wide
-    alias kupdate=k outdated
-
-    # kshell podname /bin/sh
-    alias kshell=kubectl iexec
-    alias krbac=kubectl access-matrix
-
-    # specific osx aliases
-    if { os darwin } then {
-        export EDITOR="subl -w"
-        alias top=zenith
-        alias diff=difftastic
-        alias mou=open -a Typora
-    }
-
-    # postgres stuff
-    alias pgstart=brew services start postgresql
-    alias pgstop=brew services stop postgresql
-    alias pgtop=pg_top
-
-    alias tfp=terraform plan | scenery
-    alias tf=terraform
-
-    # fixes my typos
-    alias gti=git
-
-    alias npm=pnpm
-    alias wrk2=oha
-
-#}
+# postgres stuff
+alias pgstart=brew services start postgresql
+alias pgstop=brew services stop postgresql
+alias pgtop=pg_top
