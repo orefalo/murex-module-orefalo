@@ -1,10 +1,15 @@
 
-# configure colima
-mkdir -p ~/.docker/cli-plugins
-ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+
+!if { out ~/.docker/cli-plugins/docker-compose -> f +l } then {
+    # configure colima
+    mkdir -p ~/.docker/cli-plugins
+    ln -sfn ${brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+}
 
 # osxkeychain and repo setup
-cp ./configs/dockerconfig.json ~/.docker/config.json
+!if { out ~/.docker/config.json -> f +R  } then {
+    cp ./configs/dockerconfig.json ~/.docker/config.json
+}
 
 alias start_minikube=colima start -c 4 -m 6 -k
 alias stop_minikube=colima stop

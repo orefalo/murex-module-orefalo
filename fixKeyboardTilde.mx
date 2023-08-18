@@ -7,7 +7,7 @@
 
 # launchctl print system/org.custom.tilde-switch
 
- if { $SELF.Interactive } then {
+ !if { out /Library/LaunchDaemons/org.custom.tilde-switch.plist -> f +R  } then {
 
   sudo /usr/bin/env bash -c "cat > /Library/LaunchDaemons/org.custom.tilde-switch.plist" << EOF
   <?xml version="1.0" encoding="UTF-8"?>
@@ -17,7 +17,7 @@
       <key>Label</key>
       <string>org.custom.tilde-switch</string>
       <key>Program</key>
-      <string>${HOME}/.tilde-switch</string>
+      <string>$HOME/.tilde-switch</string>
       <key>RunAtLoad</key>
       <true/>
       <key>KeepAlive</key>
