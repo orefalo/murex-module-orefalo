@@ -26,7 +26,11 @@ function dcps {
 function dpi {
     docker images | docker-color-output
 }
-alias dpiarch=docker image inspect --format '{{.ID}} {{.RepoTags}} {{.Architecture}}' ${docker image ls -q}
+function dpiarch {
+    docker image inspect --format '{{.ID}} {{.RepoTags}} {{.Architecture}}' ${docker image ls -q}
+}
 alias dshell=docker run -it --rm --entrypoint /bin/sh
 alias dtop=lazydocker
-alias dclean=docker rmi -f ${docker images -f "dangling=true" -q}
+function dclean {
+    docker rmi -f ${docker images -f "dangling=true" -q}
+}
