@@ -92,6 +92,7 @@ if { os darwin } then {
     alias top=zenith
     alias diff=difftastic
     alias mou=open -a Typora
+    alias subl=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
 }
 
 # postgres stuff
