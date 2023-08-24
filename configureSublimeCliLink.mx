@@ -1,7 +1,7 @@
 # Setup the subl alias to SublimeText
 !if { out /usr/local/bin/subl -> f +l } then {
   if { out /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -> f +F } then {
-    rm -f /usr/local/bin/subl
-    ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+    sudo rm -f /usr/local/bin/subl
+    sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
   }
 }
