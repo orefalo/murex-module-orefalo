@@ -12,7 +12,9 @@ export HOMEBREW_NO_ANALYTICS=1
 $PATH -> :paths: prepend $HOME/.krew/bin -> export PATH
 
 # my key aliases
-alias tfp=terraform plan -> scenery
+function tfp {
+    terraform plan -> scenery
+}
 alias tf=terraform
 # fixes my typos
 alias gti=git
