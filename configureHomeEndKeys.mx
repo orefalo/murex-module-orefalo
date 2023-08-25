@@ -1,6 +1,0 @@
-
-!if { out ~/Library/KeyBindings/DefaultKeyBinding.dict -> f +F } then {
-    mkdir -p ~/Library/KeyBindings
-    cp ./configs/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
-}
-

@@ -11,6 +11,12 @@ murex-package install https://github.com/orefalo/murex-module-dockercompose.git
 murex-package install https://github.com/orefalo/murex-module-javahome.git
 murex-package install https://github.com/orefalo/murex-module-starship.git
 murex-package install https://github.com/orefalo/murex-module-grc.git
+
+# then depending on the machine
+murex-package install https://github.com/orefalo/murex-module-tildekey.git
+# or
+murex-package install https://github.com/orefalo/murex-module-homeendkey.git
+
 ```
 
 ## Install
