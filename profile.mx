@@ -9,7 +9,7 @@ export SAM_CLI_TELEMETRY=0
 export HOMEBREW_NO_ANALYTICS=1
 
 # add krew to path
-$PATH -> :paths: prepend $HOME/.krew/bin -> export PATH
+$PATH -> :paths: prepend $HOME/.krew/bin /usr/local/bin -> export PATH
 
 # my key aliases
 function tfp {
@@ -99,7 +99,7 @@ if { os darwin } then {
     export EDITOR="subl -w"
     alias top=zenith
     alias diff=difftastic
-    alias mou=open -a Typora
+    alias mou=command open -a Typora
     alias subl=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
 }
 
